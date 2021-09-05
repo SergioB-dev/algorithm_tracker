@@ -24,8 +24,5 @@ def getAll():
 # print(entry1.attempt_count)
 print(Entry.find_entry_by_title("hello world"))
 
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)

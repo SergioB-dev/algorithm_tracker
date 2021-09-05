@@ -42,11 +42,6 @@ class DBManager:
 
         connection.close()
 
-
-
-
-
-
 try1 = DBManager()
 try1.place_data_in_db(title="x", language="", attempts=1, wins=0)
 
