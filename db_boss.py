@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import pandas as pd
 
 
 class DBManager:
@@ -27,6 +28,20 @@ class DBManager:
 
         connection.commit()
         connection.close()
+
+    @classmethod
+    def get_value_by_title(cls, title, callback):
+        connection = sqlite3.connect("data.db")
+        cursor = connection.cursor()
+
+        query = "SELECT * FROM entries WHERE title=?"
+        result = cursor.execute(query, (title,))
+        fetch = result.fetchone()
+        if fetch:
+            print(fetch)
+        elif fetch is None:
+            print("Entry not found.")
+            callback()
 
     def getAll(self):
         entries = []

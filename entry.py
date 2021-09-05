@@ -1,7 +1,6 @@
 import sqlite3
-from flask_restful import Resource, Api
 
-class Entry(Resource):
+class Entry:
 
     def __init__(self, title, language="Python", attempts=0,wins=0):
         self.title = title
